@@ -1,0 +1,127 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic);
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/ProximaNova/2F01C7_8_0.eot?t=1483565917456");
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/ProximaNova/2F01C7_8_0.eot?#iefix&t=1483565917456") format("embedded-opentype"), url("../fonts/Proxima Nova/2F01C7_8_0.woff2") format("woff2"), url("../fonts/Proxima Nova/2F01C7_8_0.woff") format("woff"), url("../fonts/Proxima Nova/2F01C7_8_0.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/ProximaNova/2F01C7_9_0.eot?t=1483565917456");
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/ProximaNova/2F01C7_9_0.eot?#iefix&t=1483565917456") format("embedded-opentype"), url("../fonts/Proxima Nova/2F01C7_9_0.woff2") format("woff2"), url("../fonts/Proxima Nova/2F01C7_9_0.woff") format("woff"), url("../fonts/Proxima Nova/2F01C7_9_0.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/ProximaNova/2F01C7_A_0.eot?t=1483565917456");
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/ProximaNova/2F01C7_A_0.eot?#iefix&t=1483565917456") format("embedded-opentype"), url("../fonts/Proxima Nova/2F01C7_A_0.woff2") format("woff2"), url("../fonts/Proxima Nova/2F01C7_A_0.woff") format("woff"), url("../fonts/Proxima Nova/2F01C7_A_0.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/ProximaNova/2F01C7_B_0.eot?t=1483565917456");
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/ProximaNova/2F01C7_B_0.eot?#iefix&t=1483565917456") format("embedded-opentype"), url("../fonts/Proxima Nova/2F01C7_B_0.woff2") format("woff2"), url("../fonts/Proxima Nova/2F01C7_B_0.woff") format("woff"), url("../fonts/Proxima Nova/2F01C7_B_0.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/Gotham/Gotham-Bold.otf?t=1483565917456");
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/Gotham/Gotham-Bold.otf?#iefix&t=1483565917456") format("opentype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/Gotham/Gotham-Black.otf?t=1483565917456");
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/Gotham/Gotham-Black.otf?#iefix&t=1483565917456") format("opentype");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/Gotham/Gotham-Light.otf?t=1483565917456");
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/Gotham/Gotham-Light.otf?#iefix&t=1483565917456") format("opentype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/Gotham/Gotham-Book.otf?t=1483565917456");
+  src: url("//cdn2.hubspot.net/hubfs/2019213/fonts/Gotham/Gotham-Book.otf?#iefix&t=1483565917456") format("opentype");
+  font-weight: 400;
+  font-style: normal; }
+
+body, html {
+  font-family: "Gotham", "Proxima Nova", arial, sans-serif;
+  background-color: white;
+  width: 100%;
+  overflow-x: hidden; }
+
+.container {
+  float: none;
+  margin: auto; }
+
+.btn-file {
+  position: relative;
+  overflow: hidden; }
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block; }
+
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important; }
+
+#fileUpload #form {
+  width: 100%;
+  display: flex; }
+
+#fileUpload .input-group {
+  float: left;
+  clear: right; }
+
+#fileUpload .row {
+  display: flex; }
+
+#fileUpload button {
+  margin-left: 20px;
+  width: 100px; }
+
+#fileUpload .songLink {
+  margin-top: 20px;
+  width: 50%; }
+
+#fileUpload .songLink h6 {
+  float: left;
+  margin-top: 3px;
+  margin-right: 10px; }
+
+#fileUpload .uploadProgress {
+  margin-top: 20px;
+  width: 50%; }
+
+#fileUpload .uploadProgress h6 {
+  float: right;
+  margin-top: 3px;
+  margin-right: 10px; }
+
+/*# sourceMappingURL=styles.css.map */
+.title-row {
+	margin-top: 40px
+}

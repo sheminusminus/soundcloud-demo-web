@@ -1,0 +1,84 @@
+@import "common/_fonts.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
+
+body,html{
+    font-family: $fontName;
+    background-color: white;
+    width: 100%;
+    overflow-x: hidden; 
+    //background-color: red;
+}
+
+.container{
+    float: none;
+    margin: auto;
+}
+
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+
+
+#fileUpload{
+  #form{
+    width: 100%;
+    display: flex;
+  }
+  .input-group{
+    
+    float: left;
+    clear: right;
+  }
+  .row{
+    display: flex;
+  }
+  button{
+    margin-left:20px;
+    width: 100px;
+  }
+
+  .songLink{
+    margin-top:20px;
+    width:50%;
+    h6{
+      float: left;
+      margin-top: 3px;
+      margin-right:10px;
+    }
+  }
+
+
+ .uploadProgress{
+    margin-top:20px;
+    width:50%;
+    h6{
+      float: right;
+      margin-top: 3px;
+      margin-right:10px;
+    }
+  }
+
+
+}

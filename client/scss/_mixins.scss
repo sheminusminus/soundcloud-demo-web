@@ -1,0 +1,112 @@
+@mixin textRender(){
+     -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+}
+
+@mixin imageSize(){
+        display: block;
+        max-width:100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;  
+}
+
+@mixin sectionPadding($top , $right , $bottom , $left){
+    padding-top: $top ;
+    padding-right: $right;
+    padding-bottom:$bottom;
+    padding-left: $left;
+}
+
+@mixin emailInputSize($widthEmail , $widthSubmit){
+      input[type="email"]{ 
+            width: $widthEmail;
+            display: block;
+    }
+    input[type="submit"] { 
+            width: $widthSubmit;
+            display: block;
+    }
+        .emailInput{
+            height: 50px;
+            background-color: #FFFFFF;
+            border-radius: 6px 6px 6px 6px;
+            padding: 4px 20px;
+            font-size: 16px;
+            font-weight: 300;
+            border: 0;
+            float: left;
+            //margin-top: 20px;            
+    }
+    @at-root {
+        .submitEmail{
+               display: block;
+                height: 50px;
+                background-color: #4C74E1;
+                border-radius: 6px 6px 6px 6px;
+                border: 0px;
+                float: left;
+                margin-top: 20px;
+                color: white;
+                &:hover{
+                    cursor:pointer;
+                    transition: opacity 1s ease;
+                    opacity: 0.8;
+                }
+        }
+    }
+}
+
+
+
+@mixin cardGradient(){
+    border-radius: 0px;
+    background: #415dac;
+    background: -webkit-linear-gradient(left, #775fcd 10%, #415dac 80%, #415dac 100%);
+    background: linear-gradient(to right, #775fcd 10%, #415dac 80%, #415dac 100%);
+}
+
+@mixin cardRoundButton(){
+        background-color: white;
+        border-radius: 40px;
+        padding: 15px 20px 15px 20px;
+        text-decoration: none;
+        color: $navColorBlue;
+        font-family: $fontName;
+        font-weight: 600;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right:auto;
+        margin-top:30px;
+        margin-bottom:30px;
+}
+
+
+@mixin cardText(){
+        margin: auto;
+        h1{
+            color: white;
+            font-family: $fontName ;
+            font-size: $headingMainFS;
+            text-align: center;
+            font-weight: 600;
+            padding-top:20px;
+            padding-left: 40px;
+            padding-right:40px;
+            padding-bottom: 30px;
+            @include textRender();
+        }
+        p{
+            color: $headingDesc;
+            text-align: center;
+            color: white;
+            line-height: 1.5;
+            font-family: $fontName;
+            padding-top: 10px;
+            font-size: $normalFS;
+            font-weight: 400;
+             @include textRender();
+        }
+}
