@@ -16,26 +16,6 @@
 </head>
 
 <body>
-    <!--
-<div class="container">
-    <div class="row">
-    <div class="col-md-6" style="margin: auto;">
-        <div class="fileCard" id="form">
-              <p>Select a file below. When it is uploaded, a link will be displayed to the uploaded file.</p>
-                  <h6>Choose File</h6>
-                    <div class="fileUpload btn btn-primary">
-                      <input class="upload"type="file" id="file" name="file"/>
-                    </div>
-                    <h6>File URL:</h6>
-                  <span id="linkbox"></span>
-        </div>
-
-      <div class="fileUpload btn btn-primary">
-          <span>Upload</span> <input type="file" class="upload" />
-      </div>
-      </div>
-   </div>
- </div>-->
  	<div id="list-uploads">
 	 	
  	</div>
@@ -58,7 +38,10 @@
                     </span>
                 </div> 
             
-
+			<textarea class="col-12" cols="20" id="descrip"></textarea>
+			<input type="text" id="time-input" placeholder="length" />
+			<input type="text" id="tag-input" placeholder="1 search tag" />
+			
             <div class="uploadProgress">
                 <h6 id="progress"></h6>
             </div>
@@ -76,7 +59,7 @@
                     <input type="text" class="form-control" readonly>
 		            <button type="button" class="btn btn-primary btn-block col-4" id="submit-image">Upload</button>
                 </div>
-					<textarea class="col-12" cols="20" id="descrip"></textarea>
+					
             </div>
 
             <div class="songLink imageLink col-12">

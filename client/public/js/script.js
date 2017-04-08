@@ -9,23 +9,24 @@ $(function() {
  var newImageKey = null;
  var imageDone = false;
  var songDone = false;
-
+var audioURL = '';
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
 	        uid = user.uid;
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            //var uid = user.uid;
-            var providerData = user.providerData;
+            //var displayName = user.displayName;
+            //var email = user.email;
+            //var emailVerified = user.emailVerified;
+            //var photoURL = user.photoURL;
+            //var isAnonymous = user.isAnonymous;
+            var uid = user.uid;
+            //var providerData = user.providerData;
             console.log("User Signed In")
             console.log(window.location.pathname)
             console.log(window.location.href)
-                if(window.location.pathname == '/')
-                {window.location = 'upload.html';}
+            if (window.location.href == '/')
+            { window.location.assign('/upload.html'); }
+/*
             dbRef.child('users').child(uid).child('images').on('value', function(snapshot) {
 	           document.getElementById('list-uploads').innerHTML = '';
 	           var userKeys = Object.keys(snapshot.val());
@@ -40,6 +41,7 @@ $(function() {
 	           });
 	       
             });
+*/
             
         } else {
             console.log("User Signed Out")
@@ -143,10 +145,13 @@ function uploadFile(evt) {
                 }, function(error) {
                 }, function() {
                     var downloadURL = uploadTask.snapshot.downloadURL;
+                    audioURL = uploadTask.snapshot.downloadURL;
                     songDone = true;
+/*
                     dbRef.child('users').child(uid).child('songs').child(newImageKey).set({
 	                    url: downloadURL
 	                });
+*/
                     document.getElementById('linkbox').innerHTML = '<a href="' +  downloadURL + '">Click For File</a>';
                     document.getElementById('progress').innerHTML = "";
                     if (imageDone) { newImageKey = null; }
@@ -161,9 +166,11 @@ function uploadFile(evt) {
 
 function uploadImage(evt) {
 
+	  var songKey = dbRef.child('songs').push().key;
+
       var BASE_URL = 'users/' + uid + '/images/';
       var STORAGE_URL = 'images/';
-	  var SONG_URL = 'users/' + uid + '/songs/';
+	  var SONG_URL = 'songs/' + songKey;
 	  
 	  //=======
 	  console.log(newImageKey);
@@ -180,12 +187,12 @@ function uploadImage(evt) {
       var songTitle = document.getElementById('song-title').value;
       var fileExtension = file.type.split('/')[1];
       BASE_URL += newImageKey;
-      SONG_URL += newImageKey;
+      //SONG_URL += newImageKey;
       
-      STORAGE_URL += newImageKey + '.' + fileExtension;
+      STORAGE_URL += songKey + '.' + fileExtension;
       
       //=======
-	  console.log(BASE_URL, STORAGE_URL);
+	  console.log(BASE_URL, SONG_URL);
 	  //=======
       
       //=========
@@ -213,13 +220,25 @@ function uploadImage(evt) {
 	            }, function() {
 	                    var downloadURL = uploadTask.snapshot.downloadURL;
 	                    var description = document.getElementById('descrip').value;
+	                    var len = document.getElementById('time-input').value;
+	                    var tag = document.getElementById('tag-input').value;
 						imageDone = true;
+/*
 	                    dbRef.child(BASE_URL).set({
 		                    url: downloadURL,
 		                    description: description
 	                    });;
-	                    dbRef.child(SONG_URL).update({
-		                    title: songTitle
+*/
+	                    dbRef.child(SONG_URL).set({
+		                    title: songTitle,
+		                    description: description,
+		                    length: len,
+		                    cover: downloadURL,
+		                    searchItems: {
+			                    0: tag
+		                    },
+		                    audioFile: audioURL != '' ? audioURL : 'https://firebasestorage.googleapis.com/v0/b/soundcloudapp-d5f93.appspot.com/o/Gimme%20Shelter%201969%20-%20The%20Rolling%20Stone.mp3?alt=media&token=03a3a76b-cac3-456a-b6d5-2e1b3d64d1ee',
+		                    createdAt: (new Date().toLocaleDateString())
 	                    });
 	                    document.getElementById('image-linkbox').innerHTML = '<a href="' +  downloadURL + '">Click For File</a>';
 	                    document.getElementById('image-progress').innerHTML = "";
